@@ -1,4 +1,4 @@
-package leetcode
+package two_sum
 
 func twoSum(nums []int, target int) []int {
 	rank := make(map[int]int, len(nums))

@@ -1,12 +1,11 @@
-package leetcode
+package add_two_numbers
 
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
+// ListNode Singly-linked list.
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	header := &ListNode{} /* 首节点，从它的后继开始存储答案 */
 	flag := header

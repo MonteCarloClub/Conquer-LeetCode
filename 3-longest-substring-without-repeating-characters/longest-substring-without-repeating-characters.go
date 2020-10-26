@@ -1,4 +1,4 @@
-package leetcode
+package longest_substring_without_repeating_characters
 
 func lengthOfLongestSubstring(s string) int {
 	// 字符串是空，返回答案

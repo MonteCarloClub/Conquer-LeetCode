@@ -1,4 +1,4 @@
-package is_unique_lcci
+package is_unique
 
 func isUnique(astr string) bool {
 	elemMap := make(map[string]bool)

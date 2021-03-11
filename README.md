@@ -28,7 +28,6 @@ git checkout -b <你的分支名>
 git add .
 git commit -m "Clean my branch"
 ```
-*无论如何，请在自己的分支上新建不跟他人重名的文件夹并保持在自己新建的文件夹下工作，这样做能杜绝归并代码时发生冲突！*
 
 3. 把自己的分支推送到远程仓库：
 ```dotnetcli

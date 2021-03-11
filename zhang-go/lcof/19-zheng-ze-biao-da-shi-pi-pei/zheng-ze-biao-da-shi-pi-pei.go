@@ -1,1 +1,1 @@
-/home/zhang/Documents/Repositories/LeetCode-in-Go/algorithms/10-regular-expression-matching/regular-expression-matching.go
+/Users/zhang/Documents/Repositories.nosync/Conquer-LeetCode/zhang-go/algorithms/10-regular-expression-matching/regular-expression-matching.go

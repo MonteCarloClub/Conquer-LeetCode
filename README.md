@@ -19,30 +19,33 @@ git remote set-url origin https://github.com/XINKINGBO-1206/Conquer-LeetCode.git
 git clone https://github.com/XINKINGBO-1206/Conquer-LeetCode.git
 ```
 
-2. 新建自己的分支同时切换过去：
+2. **新建你的目录**，在你自己的目录下工作：
 ```dotnetcli
-git checkout -b <你的分支名>
+cd Conquer-LeetCode
+mkdir <YOUR_NAME>-<LANG>
 ```
-你在自己分支上的工作不会影响主分支和他人的分支。这时候，你可以选择清空自己的分支（它可能初始地包含主分支上他人的贡献）并提交：
+请保持在自己的目录下工作，这不会影响他人的工作。
+
+*事实上，最好的解决方案是各自在不同的分支上工作，最后合并到主分支。因为我们的提交信息包含了“#题目编号”这样的写法，这样的写法会不必要地应用PR或Issues，所以我不鼓励在本项目提交PR和Issue。*
+
+你可以随时提交你的更改：
 ```dotnetcli
 git add .
-git commit -m "Clean my branch"
+git commit -m "write a message here"
 ```
 
 3. 把自己的分支推送到远程仓库：
 ```dotnetcli
-git push -u origin <你的分支名>
+git push -u origin master
 ```
-如果失败，可以尝试强制推送使远程仓库跟本地保持一致：
-```dotnetcli
-git push -f origin <你的分支名>
-```
+
+**假如失败，请勿强制推送，请检查和解决冲突！**
+
 简单回顾一下，把本地更改提交到GitHub上分成3步：add（缓存）->commit（提交）->push（推送），请不要直接向主分支或他人的分支推送更改；
 
-4. 有且仅有正确答案被允许归并到主分支，请在合适的时候提出pull request，管理员审核通过后即合并。
 
 ## 注意事项
-记得及时更新自己的
+记得及时更新
 ```.gitignore```
 文件，不要把无关文件推送到远程仓库，保持整洁，人人有责。
 

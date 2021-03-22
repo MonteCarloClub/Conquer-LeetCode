@@ -19,8 +19,11 @@ public:
     int inline partition(vector<int>& nums, int left, int right) {
         int j = left;
         for(int i = left+1; i<=right; i++) {
-            if(nums[i] >= nums[left] && ++j!=i) {
-            	swap(nums, j, i);
+            if(nums[i] >= nums[left]) {
+                j++;
+                if(j != i) {
+                    swap(nums, j, i);
+                }
             }
         }
         swap(nums, left, j);

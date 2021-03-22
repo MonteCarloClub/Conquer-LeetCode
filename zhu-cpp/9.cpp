@@ -1,7 +1,9 @@
 //
 // Created by Ole on 2021/3/23 0023.
 //
-#include<string>
+#include <string>
+#include <iostream>
+
 class Solution {
 public:
     bool isPalindrome(int x) {

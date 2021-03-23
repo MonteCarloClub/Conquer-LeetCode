@@ -12,31 +12,25 @@ public:
             } else {
                 right = pivot-1;
             }
-
         }
     }
 
-    int inline partition(vector<int>& nums, int left, int right) {
+    inline int partition(vector<int>& nums, int left, int right) {
         randomChoose(nums, left, right);
         int j = left;
         for(int i = left+1; i<=right; i++) {
-            if(nums[i] >= nums[left] && ++j!=i){
-                swap(nums, j, i);
+            if(nums[i] > nums[left] && ++j!=i){
+                swap(nums[j], nums[i]);
             }
         }
-        swap(nums, left, j);
+        swap(nums[left], nums[j]);
         return j;
     } 
 
-    void inline randomChoose(vector<int>& nums, int left, int right) {
+    inline void randomChoose(vector<int>& nums, int left, int right) {
         srand((unsigned)time(NULL));
         int index = (rand() % (right-left+1))+ left;
-        swap(nums, left, index);
+        swap(nums[left], nums[index]);
     }
 
-    void inline swap(vector<int>& nums, int left, int right) {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
-    }
 };

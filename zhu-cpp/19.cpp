@@ -20,10 +20,9 @@ public:
         ListNode* t = head,*te = head;
         while(n--) {
             te = te->next;
-            if(!te->next)
+            if(!te)
                 return head->next;
         }
-        te = te->next;
         while(te->next)
         {
             t = t->next;

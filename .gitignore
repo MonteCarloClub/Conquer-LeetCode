@@ -7,3 +7,4 @@ main
 
 # zhao@c++
 *.un~
+.DS_Store

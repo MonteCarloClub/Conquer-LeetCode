@@ -4,3 +4,7 @@
 go.sum
 main.go
 main
+
+# zhao@c++
+*.un~
+.DS_Store

@@ -1,88 +1,51 @@
 //
-// Created by Ole on 2021/4/24 0024.
+// Created by Oliver on 2021/4/20.
 //
 
 #include <iostream>
 #include <vector>
+#include <map>
 #include <algorithm>
 #include <string>
 #include <stack>
-
+#include <cmath>
 using namespace std;
 class Solution {
 public:
     int longestValidParentheses(string s) {
-        stack<int>stk;
-        stk.push(-1);
-        int r =0;
-        for(int i=0;i<s.size();i++)
+        int left=0,right=0;
+        int temp = 0;
+        stack<char> stk;
+        int maxlen = 0;
+        for(auto c:s)
         {
-            if(s[i]=='(')
-                stk.push(i);
-            else
-            {
-                stk.pop();
-                if(stk.empty())
-                    stk.push(i);
-                else r = max(r,i-stk.top());
-            }
-        }
-        return r;
-    }
-    int prime_longestValidParentheses(string s) {
-        vector<int> nums;
-        if (s == "" || s == "（" || s == ")")
-            return 0;
-        for (int i = 0; i < s.size(); i++) {
-            if (s[i] == '(')
-                nums.push_back(1);
-            else
-                nums.push_back(0);
-        }
-        while (1)
-        {
-            int flag =1;
-            for(int i=0;i<nums.size()-1;i++)
-            {
-                if(nums[i]==1) {
-                    int add = 2;
-                    for (int j = i + 1; j < nums.size(); j++) {
-                        if (nums[j] == 1) {
-                            i = j - 1;
-                            break;
-                        } else if (nums[j] > 1)
-                            add += nums[j];
-                        else if (nums[j] == 0) {
-                            flag = 0;
-                            nums[i] = add;
-                            for (int k = i + 1; k <= j; k++)
-                                nums.erase(nums.begin() + i+1);
-                            break;
-                        }
-                    }
-                }
-            }
-            if(flag)
-                break;
-        }
-        int maxn = 0;
-        int t = 0;
-        for(int i=0;i<nums.size();i++) {
-            if(nums[i]>1)
-            {
-                t+=nums[i];
-                maxn = max(maxn,t);
+            if(c=='(') {
+                left++;
+                stk.push(c);
             }
             else
-                t = 0;
+            {
+                right++;
+                if(!stk.empty())
+                    stk.pop();
+                temp+=2;
+                if(right<=left)
+                    maxlen = max(right*2,maxlen);
+                else
+                    right = left = 0;
+            }
         }
-        return maxn;
+        return maxlen;
     }
 };
 
+
+
 int main()
 {
+    string str="()(()";
     Solution s;
-    cout<<s.longestValidParentheses("()(())");
+    int r = s.longestValidParentheses(str);
+    cout<<r;
     return 1;
 }

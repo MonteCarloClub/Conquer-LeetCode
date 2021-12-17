@@ -10,3 +10,6 @@ main
 .DS_Store
 *.exe
 tempCodeRunnerFile
+
+# zhu@go
+!zhu-go/**/main.go
